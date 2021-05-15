@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainFragment">
+
+    <EditText
+		android:id="@+id/tankSize"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		android:inputType="numberDecimal"
+		android:hint="Tank Size (gal)"/>
+
+	<EditText
+		android:id="@+id/fuelLevel"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintStart_toEndOf="@id/tankSize"
+		app:layout_constraintTop_toTopOf="parent"
+		android:inputType="numberDecimal"
+		android:hint="Fuel Level (%)"/>
+
+	<EditText
+		android:id="@+id/currentBlend"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tankSize"
+		android:inputType="numberDecimal"
+		android:hint="Current Blend (%)"/>
+
+	<EditText
+		android:id="@+id/desiredBlend"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintStart_toEndOf="@id/currentBlend"
+		app:layout_constraintTop_toBottomOf="@id/fuelLevel"
+		android:inputType="numberDecimal"
+		android:hint="Desired Blend (%)"/>
+
+	<EditText
+		android:id="@+id/fuelOneBlend"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/currentBlend"
+		android:inputType="numberDecimal"
+		android:hint="Fuel #1 Blend (%)"/>
+
+	<EditText
+		android:id="@+id/fuelTwoBlend"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintStart_toEndOf="@id/fuelOneBlend"
+		app:layout_constraintTop_toBottomOf="@id/desiredBlend"
+		android:inputType="numberDecimal"
+		android:hint="Fuel #2 Blend (%)"/>
+
+	<Button
+		android:id="@+id/calculateButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Calculate"
+		app:layout_constraintTop_toBottomOf="@id/fuelOneBlend"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
+
+	<TextView
+		android:id="@+id/fuelOneResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Fuel #1"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toStartOf="@id/fuelTwoResult"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/calculateButton" />
+
+	<TextView
+		android:id="@+id/fuelTwoResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Fuel #2"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@id/fuelOneResult"
+		app:layout_constraintTop_toBottomOf="@id/calculateButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "com.github.reline";
+option java_multiple_files = true;
+
+message Settings {
+  float tank_size_gallons = 1;
+  float desired_ethanol_percentage = 2;
+  float fuel_one_ethanol_percentage = 3;
+  float fuel_two_ethanol_percentage = 4;
+}
