@@ -4,8 +4,11 @@ import androidx.datastore.core.DataStore
 import com.github.reline.Settings
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
-open class SettingsRepository(private val settingsStore: DataStore<Settings>) {
+open class SettingsRepository @Inject constructor(
+	private val settingsStore: DataStore<Settings>
+) {
 
 	val tankSize: Flow<Float>
 		get() = settingsStore.data.map { it.tankSizeGallons }

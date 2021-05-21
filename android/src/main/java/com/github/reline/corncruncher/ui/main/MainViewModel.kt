@@ -6,11 +6,16 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.github.reline.corncruncher.Calculator
 import com.github.reline.corncruncher.settings.SettingsRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import javax.inject.Inject
 
-class MainViewModel(private val repository: SettingsRepository) : ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(
+	private val repository: SettingsRepository
+) : ViewModel() {
 
 	val tankSize = MutableLiveData(10f)
 	val desiredEthanol = MutableLiveData(54f)
