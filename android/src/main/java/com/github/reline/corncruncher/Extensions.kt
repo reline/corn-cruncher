@@ -10,3 +10,12 @@ fun Activity.hideKeyboard() {
 		context?.hideSoftInputFromWindow(it, InputMethodManager.HIDE_NOT_ALWAYS)
 	}
 }
+
+// todo: lambda?
+//public actual inline fun String.toFloatSafely(): Float = try
+
+inline fun <T: Any> ifLet(vararg elements: T?, closure: (List<T>) -> Unit) {
+	if (elements.all { it != null }) {
+		closure(elements.filterNotNull())
+	}
+}
